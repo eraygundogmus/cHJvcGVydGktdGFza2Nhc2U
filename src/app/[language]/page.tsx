@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getServerTranslation } from "@/app/services/i18n";
+import { getServerTranslation } from "@/services/i18n";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/firebase/admin";
 

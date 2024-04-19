@@ -5,7 +5,7 @@ import {
   fallbackLanguage,
   languages,
   cookieName,
-} from "./app/services/i18n/config";
+} from "./services/i18n/config";
 
 acceptLanguage.languages([...languages]);
 

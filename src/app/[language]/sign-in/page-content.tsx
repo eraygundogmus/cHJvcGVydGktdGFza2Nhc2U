@@ -1,5 +1,5 @@
 "use client";
-import { useTranslation } from "@/app/services/i18n/client";
+import { useTranslation } from "@/services/i18n/client";
 import { useRouter } from "next/navigation";
 import { signInWithGoogle } from "@/lib/firebase/auth";
 

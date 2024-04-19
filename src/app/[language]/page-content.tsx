@@ -1,5 +1,5 @@
 "use client";
-import { useTranslation } from "@/app/services/i18n/client";
+import { useTranslation } from "@/services/i18n/client";
 import { useRouter } from "next/navigation";
 import { UserRecord } from "firebase-admin/auth";
 import { signOut } from "@/lib/firebase/auth";
