@@ -7,7 +7,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -16,8 +15,11 @@ import { signOut } from "@/lib/firebase/auth";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase";
+import { useTranslation } from "@/services/i18n/client";
 
 function LayoutHeader() {
+  const { t } = useTranslation("common");
+
   const router = useRouter();
   const [user, setUser] = useState<{
     displayName: string | null;
@@ -74,7 +76,7 @@ function LayoutHeader() {
               data-testid="logout-menu-item"
               onClick={() => handleSignOut()}
             >
-              Log out
+              {t("signOut")}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
