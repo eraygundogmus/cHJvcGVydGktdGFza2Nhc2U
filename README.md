@@ -27,3 +27,11 @@
    ```
 
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Running Tests
+
+To run _e2e_ tests, you can use the following command:
+
+```bash
+pnpm e2e
+```
