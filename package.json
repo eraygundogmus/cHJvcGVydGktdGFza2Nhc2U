@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "cypress run"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.4",
@@ -15,6 +16,7 @@
     "accept-language": "^3.0.18",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "cypress": "^13.8.0",
     "firebase": "^10.11.0",
     "firebase-admin": "^12.1.0",
     "i18next": "^23.4.6",
