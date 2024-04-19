@@ -7,6 +7,7 @@ import "@/services/i18n/config";
 import { getServerTranslation } from "@/services/i18n";
 import StoreLanguageProvider from "@/services/i18n/store-language-provider";
 import { languages } from "@/services/i18n/config";
+import LayoutHeader from "@/components/layout-header";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -45,7 +46,11 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <StoreLanguageProvider>{children}</StoreLanguageProvider>
+        <StoreLanguageProvider>
+          <LayoutHeader />
+
+          {children}
+        </StoreLanguageProvider>
       </body>
     </html>
   );
