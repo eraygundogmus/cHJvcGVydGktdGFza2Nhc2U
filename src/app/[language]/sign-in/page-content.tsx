@@ -6,7 +6,7 @@ import { signInWithGoogle } from "@/lib/firebase/auth";
 import { Button } from "@/components/ui/button";
 import Loading from "../loading";
 
-export default function SignIn() {
+export default async function SignIn() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { t } = useTranslation("sign-in");
