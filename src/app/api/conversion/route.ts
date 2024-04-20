@@ -15,7 +15,7 @@ export async function POST(
   req: NextRequest
 ): Promise<NextResponse<ConversionResponse | any>> {
   try {
-    await rateLimiter.consume(req.ip);
+    await rateLimiter.consume(req.ip as string);
 
     const body = await req.json();
     const number = body.number;
