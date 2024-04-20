@@ -8,6 +8,7 @@ import { getServerTranslation } from "@/services/i18n";
 import StoreLanguageProvider from "@/services/i18n/store-language-provider";
 import { languages } from "@/services/i18n/config";
 import LayoutHeader from "@/components/layout-header";
+import { Toaster } from "@/components/ui/sonner";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <Toaster />
         <StoreLanguageProvider>
           <LayoutHeader />
 
