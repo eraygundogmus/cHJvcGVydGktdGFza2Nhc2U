@@ -23,7 +23,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="container">
-      <Home currentUser={currentUser.toJSON() as typeof currentUser} />
+      <Home />
     </main>
   );
 }

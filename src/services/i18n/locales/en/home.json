@@ -1,4 +1,19 @@
 {
-  "title": "Home",
-  "description": "Welcome to the calculator app."
+  "title": "Integer to Roman Numeral",
+  "description": "Welcome to the calculator app.",
+  "validation": {
+    "required": "This field is required.",
+    "integer": "Please enter a valid integer.",
+    "min": "Please enter a value greater than or equal to 1.",
+    "max": "Please enter a value less than or equal to 1000."
+  },
+  "convert": "Convert",
+  "conversion": {
+    "success": "Conversion successfull. The Roman numeral equivalent of the integer is ",
+    "tableCaption": "A list of your recent conversions.",
+    "tableHeader": {
+      "integer": "Integer",
+      "romanNumeral": "Roman Numeral"
+    }
+  }
 }
