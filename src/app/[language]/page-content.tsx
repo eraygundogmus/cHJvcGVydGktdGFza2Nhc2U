@@ -69,6 +69,10 @@ async function Home() {
       toast(t("conversion.success") + json.result);
       addConversion(data.number, json.result);
     }
+
+    if (res.status === 429) {
+      toast(t("conversion.errorToManyRequest"));
+    }
   };
   return (
     <>

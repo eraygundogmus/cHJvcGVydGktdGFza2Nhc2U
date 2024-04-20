@@ -10,6 +10,7 @@
   "convert": "Umwandeln",
   "conversion": {
     "success": "Umwandlung erfolgreich. Das römische Zahläquivalent der Ganzzahl ist ",
+    "errorToManyRequest": "Sie haben zu viele Anfragen gestellt. Bitte versuchen Sie es später noch einmal.",
     "tableCaption": "Eine Liste Ihrer letzten Umwandlungen.",
     "tableHeader": {
       "integer": "Ganzzahl",

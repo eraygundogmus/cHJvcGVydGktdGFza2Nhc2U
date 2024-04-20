@@ -10,6 +10,7 @@
   "convert": "Convert",
   "conversion": {
     "success": "Conversion successfull. The Roman numeral equivalent of the integer is ",
+    "errorToManyRequest": "You have made too many requests. Please try again later.",
     "tableCaption": "A list of your recent conversions.",
     "tableHeader": {
       "integer": "Integer",
