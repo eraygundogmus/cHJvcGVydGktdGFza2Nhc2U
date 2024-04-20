@@ -16,6 +16,14 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase";
 import { useTranslation } from "@/services/i18n/client";
+import { languages } from "@/services/i18n/config";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 function LayoutHeader() {
   const { t } = useTranslation("common");
@@ -41,46 +49,63 @@ function LayoutHeader() {
     if (isOk) router.push("/sign-in");
   };
 
-  console.log("USER", user);
   return (
     <header className="container flex justify-between bg-white border-b-2 py-4">
       <Logo />
-      {user && (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-              <Avatar className="h-8 w-8">
-                <AvatarImage
-                  src={user?.photoURL || ""}
-                  alt={user?.displayName || "User"}
-                />
-                <AvatarFallback>
-                  <span>{user?.displayName?.charAt(0)}</span>
-                </AvatarFallback>
-              </Avatar>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="end" forceMount>
-            <DropdownMenuLabel className="font-normal">
-              <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">
-                  {user && user.displayName}
-                </p>
-                <p className="text-xs leading-none text-muted-foreground">
-                  {user && user.email}
-                </p>
-              </div>
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem
-              data-testid="logout-menu-item"
-              onClick={() => handleSignOut()}
-            >
-              {t("signOut")}
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      )}
+
+      <div className="flex gap-2 items-center">
+        <Select
+          onValueChange={(value) => {
+            router.push(`/${value}`);
+          }}
+        >
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Language" />
+          </SelectTrigger>
+          <SelectContent>
+            {languages.map((l) => {
+              return <SelectItem value={l}>{l}</SelectItem>;
+            })}
+          </SelectContent>
+        </Select>
+
+        {user && (
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage
+                    src={user?.photoURL || ""}
+                    alt={user?.displayName || "User"}
+                  />
+                  <AvatarFallback>
+                    <span>{user?.displayName?.charAt(0)}</span>
+                  </AvatarFallback>
+                </Avatar>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56" align="end" forceMount>
+              <DropdownMenuLabel className="font-normal">
+                <div className="flex flex-col space-y-1">
+                  <p className="text-sm font-medium leading-none">
+                    {user && user.displayName}
+                  </p>
+                  <p className="text-xs leading-none text-muted-foreground">
+                    {user && user.email}
+                  </p>
+                </div>
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                data-testid="logout-menu-item"
+                onClick={() => handleSignOut()}
+              >
+                {t("signOut")}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        )}
+      </div>
     </header>
   );
 }
