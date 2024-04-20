@@ -1,0 +1,19 @@
+{
+  "title": "Ganzzahl zu römischer Zahl",
+  "description": "Willkommen bei der Rechner-App.",
+  "validation": {
+    "required": "Dieses Feld ist erforderlich.",
+    "integer": "Bitte geben Sie eine gültige Ganzzahl ein.",
+    "min": "Bitte geben Sie einen Wert ein, der gleich oder größer als 1 ist.",
+    "max": "Bitte geben Sie einen Wert ein, der kleiner oder gleich 1000 ist."
+  },
+  "convert": "Umwandeln",
+  "conversion": {
+    "success": "Umwandlung erfolgreich. Das römische Zahläquivalent der Ganzzahl ist ",
+    "tableCaption": "Eine Liste Ihrer letzten Umwandlungen.",
+    "tableHeader": {
+      "integer": "Ganzzahl",
+      "romanNumeral": "Römische Zahl"
+    }
+  }
+}
