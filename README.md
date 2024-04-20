@@ -35,3 +35,9 @@ To run _e2e_ tests, you can use the following command:
 ```bash
 pnpm e2e
 ```
+
+To run _unit_ tests, you can use the following command:
+
+```bash
+pnpm unit
+```
