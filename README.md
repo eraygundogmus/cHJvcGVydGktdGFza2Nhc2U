@@ -41,3 +41,27 @@ To run _unit_ tests, you can use the following command:
 ```bash
 pnpm unit
 ```
+
+## Features
+
+### Translation Function
+
+To use the i18n _t_ (translate) function, you can import the `useTranslation` hook from the `@/services/i18n/client` module.
+
+```javascript
+import { useTranslation } from "@/services/i18n/client";
+
+const { t } = useTranslation("home");
+```
+
+To add a new translation, you can add a new key-value pair to the `locales` object in the `@/services/i18n/locales` module. Or you can add a new locale file to the `@/services/i18n/locales` folder.
+
+### Toaster
+
+To use the toaster, you can use the following methods:
+
+```javascript
+import { toast } from "sonner";
+
+toast("message");
+```
