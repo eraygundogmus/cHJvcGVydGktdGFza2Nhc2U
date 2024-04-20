@@ -92,23 +92,27 @@ async function Home() {
           </form>
         </FormProvider>
 
-        <Table className="mt-12">
-          <TableCaption>{t("conversion.tableCaption")}</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead>{t("conversion.tableHeader.integer")}</TableHead>
-              <TableHead>{t("conversion.tableHeader.romanNumeral")}</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {conversions.map((conversion, index) => (
-              <TableRow key={index}>
-                <TableCell>{conversion.number}</TableCell>
-                <TableCell>{conversion.converted}</TableCell>
+        {conversions.length > 0 && (
+          <Table className="mt-12">
+            <TableCaption>{t("conversion.tableCaption")}</TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead>{t("conversion.tableHeader.integer")}</TableHead>
+                <TableHead>
+                  {t("conversion.tableHeader.romanNumeral")}
+                </TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {conversions.map((conversion, index) => (
+                <TableRow key={index}>
+                  <TableCell>{conversion.number}</TableCell>
+                  <TableCell>{conversion.converted}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        )}
       </div>
     </>
   );
