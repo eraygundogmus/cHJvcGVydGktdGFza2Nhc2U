@@ -1,5 +1,6 @@
 {
   "title": "convert vII",
   "description": "An application that converts roman numerals",
-  "signOut": "Sign out"
+  "signOut": "Sign out",
+  "language": "Language"
 }

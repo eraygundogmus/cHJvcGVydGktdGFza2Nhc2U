@@ -16,15 +16,7 @@ import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase/firebase";
 import { useTranslation } from "@/services/i18n/client";
-import { languages } from "@/services/i18n/config";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-
+import { LangSwitcher } from "./lang-switch";
 function LayoutHeader() {
   const { t } = useTranslation("common");
 
@@ -54,24 +46,7 @@ function LayoutHeader() {
       <Logo />
 
       <div className="flex gap-2 items-center">
-        <Select
-          onValueChange={(value) => {
-            router.push(`/${value}`);
-          }}
-        >
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Language" />
-          </SelectTrigger>
-          <SelectContent>
-            {languages.map((l, index) => {
-              return (
-                <SelectItem key={l + index} value={l}>
-                  {l}
-                </SelectItem>
-              );
-            })}
-          </SelectContent>
-        </Select>
+        <LangSwitcher />
 
         {user && (
           <DropdownMenu>

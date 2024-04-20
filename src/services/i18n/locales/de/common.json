@@ -1,5 +1,6 @@
 {
   "title": "convert vII",
   "description": "Eine Anwendung, die römische Ziffern umwandelt",
-  "signOut": "Abmelden"
+  "signOut": "Abmelden",
+  "language": "Sprache"
 }
