@@ -63,8 +63,12 @@ function LayoutHeader() {
             <SelectValue placeholder="Language" />
           </SelectTrigger>
           <SelectContent>
-            {languages.map((l) => {
-              return <SelectItem value={l}>{l}</SelectItem>;
+            {languages.map((l, index) => {
+              return (
+                <SelectItem key={l + index} value={l}>
+                  {l}
+                </SelectItem>
+              );
             })}
           </SelectContent>
         </Select>
