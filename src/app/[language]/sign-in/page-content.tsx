@@ -1,18 +1,24 @@
 "use client";
+import { useState } from "react";
 import { useTranslation } from "@/services/i18n/client";
 import { useRouter } from "next/navigation";
 import { signInWithGoogle } from "@/lib/firebase/auth";
 import { Button } from "@/components/ui/button";
+import Loading from "../loading";
+
 export default function SignIn() {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { t } = useTranslation("sign-in");
 
   const handleSignIn = async () => {
+    setLoading(true);
     const isOk = await signInWithGoogle();
-
     if (isOk) router.push("/");
+    setLoading(false);
   };
 
+  if (loading) return <Loading />;
   return (
     <div className="mt-10">
       <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-5xl">
